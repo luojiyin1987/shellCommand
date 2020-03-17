@@ -13,6 +13,8 @@ function _cd(dir) {
 
     try{
         const curDir = process.cwd();
+        console.log('dir', dir);
+        console.log("curDir", curDir);
         process.chdir(dir);
         process.env.OLDPWD = curDir;
     } catch(e) {
@@ -21,7 +23,7 @@ function _cd(dir) {
             statFollowLinks(dir);
             err = 'not a directory: ' + dir;
         }catch(e2){
-            err = 'nosuch file or directory: ' + dir;
+            err = 'no such file or directory: ' + dir;
         }
         if(err) console.log(err);
     }
