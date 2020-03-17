@@ -38,4 +38,4 @@ const args = process.argv
 const dir = args[2];
 
 console.log("args", args);
-_cd([],dir);
+_cd(dir);
